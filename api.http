@@ -19,4 +19,7 @@ Content-Type: application/json
 ### MAPS
 
 ### GET place_id
-GET http://localhost:3000/places?text=av são paulo
+GET http://localhost:3000/places?text=av itavuvu sorocaba
+
+### GET directions between 2 locations
+GET http://localhost:3000/directions?originId=ChIJ2augpkFgz5QRuSrddO9MD4o&destinationId=ChIJOSerDab1xZQRGfRgtnrajzQ
