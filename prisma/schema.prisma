@@ -29,6 +29,6 @@ type Place {
 }
 
 type Coord {
-  lat  Float
-  long Float
+  lat Float
+  lng Float
 }
