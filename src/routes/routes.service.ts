@@ -47,7 +47,7 @@ export class RoutesService {
     });
   }
 
-  findAll() {
+  async findAll() {
     return this.prismaService.route.findMany();
   }
 
