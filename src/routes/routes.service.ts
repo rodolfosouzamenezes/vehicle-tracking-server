@@ -12,28 +12,24 @@ export class RoutesService {
   ) {}
 
   async create(createRouteDto: CreateRouteDto) {
-    const {
-      available_travel_modes,
-      geocoded_waypoints,
-      routes,
-      request,
-    } = await this.directionsService.getDirections(
-      createRouteDto.source_id, 
-      createRouteDto.destination_id
-    )
+    const { available_travel_modes, geocoded_waypoints, routes, request } =
+      await this.directionsService.getDirections(
+        createRouteDto.source_id,
+        createRouteDto.destination_id,
+      );
 
-    const legs = routes[0].legs[0]
+    const legs = routes[0].legs[0];
 
     return this.prismaService.route.create({
       data: {
         name: createRouteDto.name,
         source: {
           name: legs.start_address,
-          location: legs.start_location
+          location: legs.start_location,
         },
         destination: {
           name: legs.end_address,
-          location: legs.end_location
+          location: legs.end_location,
         },
         distance: legs.distance.value,
         duration: legs.duration.value,
@@ -42,8 +38,8 @@ export class RoutesService {
           geocoded_waypoints,
           routes,
           request,
-        })
-      }
+        }),
+      },
     });
   }
 
@@ -53,7 +49,7 @@ export class RoutesService {
 
   findOne(id: string) {
     return this.prismaService.route.findUniqueOrThrow({
-      where: { id }
+      where: { id },
     });
   }
 
