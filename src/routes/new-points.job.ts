@@ -3,7 +3,7 @@ import { RoutesDriverService } from './routes-driver/routes-driver.service';
 import { Process, Processor } from '@nestjs/bull';
 
 @Processor('new-points')
-export class NewPointsConsumer {
+export class NewPointsJob {
   constructor(private routesDriver: RoutesDriverService) {}
 
   @Process()

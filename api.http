@@ -11,7 +11,7 @@ POST http://localhost:3000/routes
 Content-Type: application/json
 
 {
-  "name": "Rota Teste",
+  "name": "Rota Teste2",
   "source_id": "ChIJ2augpkFgz5QRuSrddO9MD4o",
   "destination_id": "ChIJOSerDab1xZQRGfRgtnrajzQ"
 }
